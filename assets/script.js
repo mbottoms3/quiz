@@ -1,11 +1,42 @@
 
 var timer = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
-var questionBox = document.querySelector(".question-box")
+var questionBox = document.querySelector(".question-box");
+//declare a variable for right/wrong answer message
+var selectionResponse = document.querySelector(".selection-response");
 var secondsRemaining = 60;
 
-var questions = ["q1", "q2", "q3", "q4", "q5"];
+//maybe var questionIndex will go somewhere more useful
+
+
+
+var questions = [
+  {
+    question: "text1",
+    answers: ["a1", "a2", "a3", "a4"], 
+    correctAnswer: "a1"
+  },
+
+  {
+    question: "text2",
+    answers: ["a1", "a2", "a3", "a4"], 
+    correctAnswer: "a1"
+  },
+
+  {
+    question: "text3",
+    answers: ["a1", "a2", "a3", "a4"], 
+    correctAnswer: "a1"
+  },
+
+  {
+    question: "text4",
+    answers: ["a1", "a2", "a3", "a4"], 
+    correctAnswer: "a1"
+  }
+];
 // console.log(questions);
+
 
 
 function setTime() {
@@ -25,33 +56,55 @@ function setTime() {
   
     }, 1000);
   }
-//onClick to start game?
 
-function questionEl() {
-    //target questionBox and put the questions array in it
+
+function questionStart() {
+  var questionIndex = 0;
+  if (questionIndex) {
+    showQuestion();
+  }
+  if () {
+    //condition should be userAnswer = true
+    correctAnswer();
+  } else {
+    wrongAnswer();
     
-    for (var i = 0; i < questions.length; i++) {
-        questionBox.textContent = questions[i];
-        if (i===true) {
-            
-        } else {
-            
-        }
-        
+  }
+    //target questionBox and put the questions array in it  
     }
 
 
-    console.log(questions);
+    // console.log(questions);
+
+
+
+function correctAnswer() {
+  selectionResponse.textContent = "Correct!";
 }
-// function gameEnd() {
-//     //write function to end the game and allow user to save initials in local memory(?) with their score
-//     //have to grab the score and initials from locmem and display it on the page
-// } 
+
+function wrongAnswer() {
+  
+  selectionResponse.textContent = "Incorrect!";
+}
+
+function showQuestion() {
+  var userChoice = 
+  questionBox.textContent = questions; 
+  
+}
+
+function gameEnd() {
+  //write function to end the game and allow user to save initials in local memory(?) with their score
+  //have to grab the score and initials from locmem and display it on the page
+} 
 
 
-// startButton.addEventListener("click", setTime());  
+startButton.addEventListener("click", ()=> {
+  setTime();
+  questionStart();
+});
 
-//can i pass multiple functions to ^ like questionEl
-//no the syntax doesn't work that way
-startButton.addEventListener("click", setTime());
-startButton.addEventListener("click", questionEl());
+
+
+
+
