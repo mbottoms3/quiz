@@ -63,11 +63,11 @@ function questionStart() {
   if (questionIndex) {
     showQuestion();
   }
-  if () {
-    //condition should be userAnswer = true
-    correctAnswer();
-  } else {
-    wrongAnswer();
+  // if () {
+  //   //condition should be userAnswer = true
+  //   correctAnswer();
+  // } else {
+  //   wrongAnswer();
     
   }
     //target questionBox and put the questions array in it  
