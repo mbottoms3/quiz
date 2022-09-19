@@ -10,21 +10,24 @@
 <body>
     <header>
         <div class= "large-font">Quiz</div>
-        <button class="start-button">Start</button>
+        <button class="start-button btn">Start</button>
     </header>
   
     <main>
       <section>
         <div class="card word-guess question-box">
-          <div class="large-font word-blanks">questions here</div>
-        </div>
-        <div class="answer-buttons">
-          <button class="btn">answer 1</button>
-          <button class="btn">answer 2</button>
-          <button class="btn">answer 3</button>
-          <button class="btn">answer 4</button>
+          <div class="question-container hide">
+            <h2 class="large-font question-display"></h2>
+            <div class="answer-buttons">
+              <button class="btn">answer 1</button>
+              <button class="btn">answer 2</button>
+              <button class="btn">answer 3</button>
+              <button class="btn">answer 4</button>
+            </div>
+          </div>
           
         </div>
+        
       </section>
   
       <section>
@@ -34,7 +37,7 @@
               <h2>Wins: <span class="win">0 </span> </h2>
               <h2>Losses: <span class="lose">0</span></h2>
             </div>
-          <button class="reset-button">Reset Score</button>
+          <button class="reset-button btn">Reset Score</button>
           </div>
 
           <div class= "card timer">
@@ -47,7 +50,11 @@
 
       <section>
         <div>
-          <h2 class="selection-response"></h2>
+          <h2 class="selection-response">correct/incorrect</h2>
+        </div>
+
+        <div>
+          <button class="btn next-button">Next</button>
         </div>
       </section>
     </main>

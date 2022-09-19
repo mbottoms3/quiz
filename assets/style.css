@@ -137,3 +137,11 @@ section {
   .timer {
     height: 200px;
   }}
+
+  .btn:hover {
+    border-color: rgb(59, 219, 120);
+  }
+
+  .hide {
+    display: none;
+  }
