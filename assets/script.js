@@ -1,26 +1,26 @@
+// Targets for event handlers and displaying text
 const startButton = document.querySelector('.start-button');
 const nextButton = document.querySelector('.next-button');
 const questionBox = document.querySelector('.question-container');
 const questionEl = document.querySelector('.question-display');
 const answerButtons = document.querySelector('.answer-buttons');
 const responseEl = document.querySelector('.selection-response');
-// console.log(responseEl);
 var timer = document.querySelector(".timer-count");
 let secondsRemaining = 60;
-
+// Questions will move through these
 let shuffledQuestions, currentQuestionIndex
 
+// Event handlers 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   nextQuestion()
 })
 
+// Function that is called on click to begin quiz
 function startGame() {
   setTime()
   startButton.classList.add('hide')
-  // console.log('started');
-  
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
   questionBox.classList.remove('hide')
@@ -28,6 +28,7 @@ function startGame() {
 
 }
 
+// Function for the timer
 function setTime() {
     
   // Sets interval in variable
@@ -39,18 +40,19 @@ function setTime() {
       // Stops execution of action at set interval
       clearInterval(quizTimer);
       timer.textContent = "Time is up!";
-      // Calls function to create and append image
-      gameEnd();
+      // add a function to end the game and allow user to input initials
     }
 
   }, 1000);
 }
 
+// Resets after each question 
 function nextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+// Shows question and checks to see if the users guess is correct
 function showQuestion(question) {
   questionEl.innerText = question.question
   question.answers.forEach(answer => {
@@ -85,7 +87,7 @@ function selectAnswer(event) {
 }
 
 
-// come back to this one
+// come back to this one, try to refactor
 function setStatusClass(element, correct) {
   if (correct) {
     element.textContent = "Correct!"
@@ -96,7 +98,7 @@ function setStatusClass(element, correct) {
 
 
 
-
+// Questions/answer array
 const questions = [
   {
     question: 'What is 2 + 2?',
@@ -133,122 +135,3 @@ const questions = [
     ]
   },
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var startButton = document.querySelector(".start-button");
-// var questionBox = document.querySelector(".question-box");
-// //declare a variable for right/wrong answer message
-// var selectionResponse = document.querySelector(".selection-response");
-
-
-// //maybe var questionIndex will go somewhere more useful
-
-
-
-// var questions = [
-//   {
-//     question: "text1",
-//     answers: ["a1", "a2", "a3", "a4"], 
-//     correctAnswer: "a1"
-//   },
-
-//   {
-//     question: "text2",
-//     answers: ["a1", "a2", "a3", "a4"], 
-//     correctAnswer: "a1"
-//   },
-
-//   {
-//     question: "text3",
-//     answers: ["a1", "a2", "a3", "a4"], 
-//     correctAnswer: "a1"
-//   },
-
-//   {
-//     question: "text4",
-//     answers: ["a1", "a2", "a3", "a4"], 
-//     correctAnswer: "a1"
-//   }
-// ];
-// // console.log(questions);
-
-
-
-
-
-
-// function questionStart() {
-//   var questionIndex = 0;
-//   if (questionIndex) {
-//     showQuestion();
-//   }
-//   // if () {
-//   //   //condition should be userAnswer = true
-//   //   correctAnswer();
-//   // } else {
-//   //   wrongAnswer();
-    
-//   }
-//     //target questionBox and put the questions array in it  
-//     }
-
-
-//     // console.log(questions);
-
-
-
-// function correctAnswer() {
-//   selectionResponse.textContent = "Correct!";
-// }
-
-// function wrongAnswer() {
-  
-//   selectionResponse.textContent = "Incorrect!";
-// }
-
-// function showQuestion() {
-//   var userChoice = 
-//   questionBox.textContent = questions; 
-  
-// }
-
-// function gameEnd() {
-//   //write function to end the game and allow user to save initials in local memory(?) with their score
-//   //have to grab the score and initials from locmem and display it on the page
-// } 
-
-
-// startButton.addEventListener("click", ()=> {
-//   setTime();
-//   questionStart();
-// });
-
-
-
-
-

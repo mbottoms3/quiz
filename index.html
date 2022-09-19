@@ -10,11 +10,13 @@
 <body>
     <header>
         <div class= "large-font">Quiz</div>
+        <!-- Start Button to begin game -->
         <button class="start-button btn">Start</button>
     </header>
   
     <main>
       <section>
+        <!-- Section for question text and buttons with options -->
         <div class="card word-guess question-box">
           <div class="question-container hide">
             <h2 class="large-font question-display"></h2>
@@ -29,7 +31,8 @@
         </div>
         
       </section>
-  
+
+      <!-- Section containing wins/losses talley and reset score button -->
       <section>
         <div class="card results">
           <div class = "win-loss-container">
@@ -41,7 +44,7 @@
           </div>
 
           <div class= "card timer">
-              <!-- <div class = "timer-text"> -->
+            <!-- Header displaying time remaining -->
               <h2 class="large-font timer-count"></h2>
               <div id="main"></div>  
           </div>  
@@ -50,10 +53,12 @@
 
       <section>
         <div>
+          <!-- Header displaying correct or incorrect response -->
           <h2 class="selection-response"></h2>
         </div>
 
         <div>
+          <!-- Next question button -->
           <button class="btn next-button">Next</button>
         </div>
       </section>
