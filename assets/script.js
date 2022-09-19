@@ -3,6 +3,8 @@ const nextButton = document.querySelector('.next-button');
 const questionBox = document.querySelector('.question-container');
 const questionEl = document.querySelector('.question-display');
 const answerButtons = document.querySelector('.answer-buttons');
+const responseEl = document.querySelector('.selection-response');
+// console.log(responseEl);
 var timer = document.querySelector(".timer-count");
 let secondsRemaining = 60;
 
@@ -64,7 +66,6 @@ function showQuestion(question) {
 }
 
 function resetState() {
-  clearStatusClass(document.body)
   nextButton.classList.add('hide')
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild)
@@ -74,10 +75,7 @@ function resetState() {
 function selectAnswer(event) {
   const selectedButton = event.target
   const correct = selectedButton.dataset.correct
-  setStatusClass(document.body, correct)
-  Array.from(answerButtons.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
+  setStatusClass(responseEl, correct)
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
@@ -89,18 +87,15 @@ function selectAnswer(event) {
 
 // come back to this one
 function setStatusClass(element, correct) {
-  clearStatusClass(element)
   if (correct) {
-    element.classList.add('correct')
+    element.textContent = "Correct!"
   } else {
-    element.classList.add('wrong')
+    element.textContent = "Incorrect"
   }
 }
 
-function clearStatusClass(element) {
-  element.classList.remove('correct')
-  element.classList.remove('wrong')
-}
+
+
 
 const questions = [
   {
