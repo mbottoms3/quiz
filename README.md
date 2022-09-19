@@ -43,4 +43,4 @@ If there are any questions please reach out to me at bottoms.micah.3@gmail.com
 
 Github profile: [mbottoms3](https://github.com/mbottoms3)
 
-![screenshot of app](../quiz_screenshot.png "Javascript Quiz")
+![screenshot of app](./assets/Images/quiz_screenshot.png "Javascript Quiz")
